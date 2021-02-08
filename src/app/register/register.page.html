@@ -1,0 +1,87 @@
+<ion-app>
+  <ion-header no-border>
+    <ion-toolbar no-border color="none" mode="ios">
+      <ion-avatar>
+        <!-- <img src="https://i.pinimg.com/originals/d8/fc/1b/d8fc1b977f9eacac2940a3372917c75f.png" alt=""> -->
+        <img src="assets/logo.jpeg"  alt="">
+      </ion-avatar>
+      <ion-title>
+        <span style="color: dodgerblue;">Park</span><span style="color: orangered;">Smart</span>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="text-center">
+            <h2>Register here to create an account.</h2>
+          </div>
+          <div>
+            <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+              <ion-item color="none" class="ion-no-padding">
+                <ion-label position="floating">Full Name</ion-label>
+                <ion-input type="text" formControlName="fullName"></ion-input>
+              </ion-item>
+              <ng-container *ngFor="let validation of validation_messages.fullName">
+                <div class="error"
+                  *ngIf="submitted && registerForm.get('fullName').hasError(validation.type)">
+                  <small>{{ validation.message}}</small>
+                </div>
+              </ng-container>
+              <ion-item color="none" class="ion-no-padding">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="email" formControlName="email"></ion-input>
+              </ion-item>
+              <ng-container *ngFor="let validation of validation_messages.email">
+                <div class="error"
+                  *ngIf="submitted && registerForm.get('email').hasError(validation.type)">
+                  <small>{{ validation.message}}</small>
+                </div>
+              </ng-container>
+              <ion-item color="none" class="ion-no-padding">
+                <ion-label position="floating">Mobile Number</ion-label>
+                <ion-input type="tel" inputmode="tel" (keypress)="isInputNumber($event)" formControlName="mobileNumber">
+                </ion-input>
+              </ion-item>
+              <ng-container *ngFor="let validation of validation_messages.mobileNumber">
+                <div class="error"
+                  *ngIf="submitted && registerForm.get('mobileNumber').hasError(validation.type)">
+                  <small>{{ validation.message}}</small>
+                </div>
+              </ng-container>
+              <ion-item color="none" class="ion-no-padding">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+              <ng-container *ngFor="let validation of validation_messages.password">
+                <div class="error"
+                  *ngIf="submitted && registerForm.get('password').hasError(validation.type)">
+                  <small>{{ validation.message}}</small>
+                </div>
+              </ng-container>
+              <ion-item color="none" lines="none" class="mt-3" class="ion-no-padding">
+                <ion-checkbox slot="start" color="danger" formControlName="terms"></ion-checkbox>
+                <ion-label>I accept terms and conditions</ion-label>
+              </ion-item>
+              <ng-container *ngFor="let validation of validation_messages.terms">
+                <div class="error"
+                  *ngIf="submitted && registerForm.get('terms').hasError(validation.type)">
+                  <small>{{ validation.message}}</small>
+                </div>
+              </ng-container>
+              <div>
+                <ion-fab>
+                  <ion-fab-button (click)="register(registerForm.value)">
+                    <ion-icon name="paper-plane"></ion-icon>
+                  </ion-fab-button>
+                </ion-fab>
+              </div>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-app>

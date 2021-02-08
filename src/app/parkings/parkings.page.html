@@ -1,0 +1,46 @@
+<ion-header style="z-index: 0;">
+  <ion-toolbar>
+    <ion-buttons color="dark" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Parkings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="showmap" style="width:100%;height:200px;" id="map">
+
+  </div>
+  <ion-list no-padding>
+    <ion-item  *ngFor="let parking of parkings">
+      
+      <ion-text>
+      <p>Parking Name:<b>{{parking.parkingName}}</b></p>
+      <!-- <p>Contact Name:<b>{{parking.contactName}}</b></p>
+      <p>Contact Number:<b>{{parking.mobile}}</b></p> -->
+      <p>Distance:<b>{{parking.dis}} KM</b></p>
+      
+     
+
+      
+      
+    </ion-text>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="viewParking(parking)">view</ion-button>
+      <ion-button color="danger" (click)="more(parking)">more</ion-button>
+      <!-- <ion-text>
+      <p (click)="viewParking(parking)" style="color:red;">view</p>
+    </ion-text>
+  <ion-text>
+      <p (click)="viewParking(parking)" style="color:red;">more</p>
+    </ion-text> -->
+    </ion-buttons>
+   
+      
+      </ion-item>
+      <br />
+      
+      </ion-list>
+  
+
+</ion-content>

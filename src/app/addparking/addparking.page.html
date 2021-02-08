@@ -1,0 +1,71 @@
+<ion-header style="z-index: 0;">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Parking Space</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: center;">
+          
+          <textarea style="width:100%;height:100%;" [(ngModel)]="searchText"  placeholder="Search Address" id="searchTextField" rows="2" cols="50"></textarea>
+         
+        </ion-col>
+        
+       
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div id="map" style="width:100%;height:250px;"></div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+        <ion-input  [(ngModel)]="parkingName" placeholder="Parking Area Name"></ion-input>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="contactName" placeholder="Contact Person Name"></ion-input>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      <ion-item>
+        <ion-input [(ngModel)]="mobile" type="tel" maxlength="10" placeholder="Mobile"></ion-input>
+      </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="addParking()" color="danger">
+            Submit
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

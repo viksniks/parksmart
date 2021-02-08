@@ -1,0 +1,56 @@
+<ion-app>
+  <ion-header no-border>
+    <ion-toolbar no-border color="none" mode="ios">
+      <ion-avatar>
+        <!-- <img src="https://i.pinimg.com/originals/d8/fc/1b/d8fc1b977f9eacac2940a3372917c75f.png" alt=""> -->
+        <img src="assets/logo.jpeg" class="logo" alt="">
+      </ion-avatar>
+      <ion-title>
+        <span style="color: dodgerblue;">Park</span><span style="color: orangered;">Smart</span>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="text-center">
+            <h2>Welcome back!</h2>
+            <h2 style="margin-bottom: 20px;">Lets get you logged in.</h2>
+          </div>
+          <div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <ion-item color="none" class="ion-no-padding">
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="email" formControlName="email" ></ion-input>
+              </ion-item>
+              <div class="error" *ngIf="submitted && loginForm.controls['email'].hasError('required')">
+                <small>Please enter your email</small>
+              </div>
+              <div class="error" *ngIf="submitted && incorrectEmail">
+                <small>Email you have entered is incorrect</small>
+              </div>
+              <ion-item color="none" class="ion-no-padding">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+              </ion-item>
+              <div class="error" *ngIf="submitted && loginForm.controls['password'].hasError('required')">
+                <small>Please enter your password</small>
+              </div>
+              <div class="error" *ngIf="submitted && incorrectPassword">
+                <small>{{ incorrectPassword }}</small>
+              </div>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <a routerLink="/login/forgot-password" routerDirection="forward" class="forgot-pas">Forgot Password?</a>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button  (click)="login()">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+</ion-app>

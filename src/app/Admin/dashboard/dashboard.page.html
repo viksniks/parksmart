@@ -1,0 +1,83 @@
+
+    <ion-content>
+      <div style="margin-left: 24px;">
+        <h4 style="font-weight: bold;">Dashboard</h4>
+        <p style="color: dimgrey;font-weight: bold;">Welcome aboard, {{ fullName | titlecase }} </p>
+      </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card mode="ios">
+              <ion-item>
+                <ion-avatar>
+                  <img src="../../../assets/images/dollar.png" alt="">
+                </ion-avatar>
+                <ion-card-header>
+                  <ion-card-subtitle>Revenue</ion-card-subtitle>
+                  <ion-label style="font-weight: bold;">$5777545</ion-label>
+                </ion-card-header>
+              </ion-item>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card mode="ios">
+              <ion-item>
+                <ion-avatar>
+                  <img src="../../../assets/images/cloud.png" alt="">
+                </ion-avatar>
+                <ion-card-header>
+                  <ion-card-subtitle>Downloads</ion-card-subtitle>
+                  <ion-label style="font-weight: bold;">32654</ion-label>
+                </ion-card-header>
+              </ion-item>
+            </ion-card>
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col class="col-lg-6 col-12">
+            <ion-card class="ion-padding ion-no-margin" mode="ios">
+              <div>
+                <h6>Sales Statistics Overview</h6>
+                <small>For the year 2020</small>
+              </div>
+              <div class="d-flex" style="margin-top: 30px;">
+                <div>
+                  <p style="color: black;">Total Cost</p>
+                  <h5>15,554</h5>
+                </div>
+                <div style="margin-left:30px ;">
+                  <p style="color: black;">Total Revenue</p>
+                  <h5>$753,654</h5>
+                </div>
+              </div>
+              <ion-card-content class="ion-no-padding">
+                <canvas #lineChart></canvas>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col class="col-lg-6 col-12">
+            <ion-card class="ion-padding ion-no-margin" mode="ios">
+              <div>
+                <h6>Sales Statistics Overview</h6>
+                <small>Started collecting data from Jan 2020</small>
+              </div>
+              <div class="d-flex" style="margin-top: 30px;">
+                <div>
+                  <p style="color: black;">Total Cost</p>
+                  <h5>15,554</h5>
+                </div>
+                <div style="margin-left:30px ;">
+                  <p style="color: black;">Total Revenue</p>
+                  <h5>$753,654</h5>
+                </div>
+              </div>
+            <ion-card-content class="ion-no-padding">
+              <canvas #barChart></canvas>
+            </ion-card-content>
+          </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-content>

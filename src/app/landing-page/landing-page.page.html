@@ -1,0 +1,52 @@
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+          <ion-col class="ion-padding">
+            <div class="d-flex justify-content-center">
+              <div>
+                <!-- <img src="https://i.pinimg.com/originals/d8/fc/1b/d8fc1b977f9eacac2940a3372917c75f.png" class="logo" alt=""> -->
+                <img src="assets/logo.jpeg" class="logo" alt="">
+              </div>
+            </div>
+            <div style="margin-bottom: 40px;margin-left: 4px; text-align: center;">
+              <h2>You need to sign in or create an account to continue.</h2>
+            </div>
+            <!-- <div class="margin">
+              <ion-button class="fb-btn" expand="block" style="text-transform:none;">
+                Continue with Facebook
+                <i class="fa fa-facebook fb-icon" aria-hidden="true"></i>
+              </ion-button>
+            </div>
+    
+            <div class="margin">
+              <ion-button class="google-btn" expand="block" style="text-transform:none;">
+                Continue with Google
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" class="google-icon">
+              </ion-button>
+            </div> -->
+    
+            <div class="margin">
+              <ion-button expand="block"  color="light" style="text-transform:none;" [routerLink]="['/login']">
+                 Login
+              </ion-button>
+            </div>
+    
+            <div class="margin">
+              <ion-button expand="block"  color="dark" style="text-transform:none;" [routerLink]="['/register']">
+                Register
+              </ion-button>
+            </div>
+    
+            <div class="margin text-center" style="margin-top: 40px;">
+              <p>By proceeding with creating an account you agree to the <span style="color: dodgerblue;">Park</span><span style="color: orangered;">Smart </span> 
+                 <a>Terms & conditions</a>
+                and
+                <a>Privacy Policy.</a>
+              </p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+</ion-content>
+

@@ -1,0 +1,35 @@
+ion-header{
+    background:slategrey;
+}
+ion-toolbar{
+    --background: slategrey;
+    color: white;
+}
+ion-content{
+    --background: white;
+}
+ion-col{
+    padding: 0px 16px !important;
+}
+h4{
+    border-bottom: 1px solid gainsboro;
+    line-height: 2;
+    font-size: 18px !important;
+}
+ion-icon{
+    color: slategrey;
+}
+ion-label{
+    color: #424242 !important;
+    font-size: 15px !important;
+}
+.fullname{
+    color: white !important;
+}
+ion-item{
+    --background: #f4f5f8;
+}
+ion-card{
+    margin: 0;
+    background: #f8f9fa;
+}

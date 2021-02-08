@@ -1,0 +1,37 @@
+<ion-header style="z-index:0;">
+  <ion-toolbar>
+    <ion-buttons color="dark" slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rent Spaces</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card *ngFor="let d of details">
+  <ion-card-header>
+    <ion-text>
+      <b>Country: {{d.selectedCountry}}</b>
+      <br /><br />
+      <b>Address: {{d.address}}</b>
+      <br /><br />
+      <b>Parking Type: {{d.parkingType}}</b>
+      <br /><br />
+      <b>Description: {{d.desc}}</b>
+      <br /><br />
+      <b>Features: {{d.features}}</b>
+      <br /><br />
+      <b>Contact Number:{{d.mobile}}</b>
+    </ion-text>
+  </ion-card-header>
+  
+  <ion-card-content>
+    <ion-slides pager>
+      <ion-slide *ngFor="let img of d.images.split(',')" >
+        <img [src]="url+img"/>
+      </ion-slide>
+    </ion-slides>
+    
+</ion-card-content>
+</ion-card>
+</ion-content>

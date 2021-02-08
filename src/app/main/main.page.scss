@@ -1,0 +1,12 @@
+ion-tab-button{
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --color: slategrey;
+    --color-selected: crimson;
+}
+
+ion-tab-button{
+    ion-label{
+        font-size: 10px !important;
+    }
+}
